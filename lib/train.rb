@@ -13,7 +13,7 @@ class Train
     @train.count
   end
 
-  def arrives_at_station
+  def arrives_at_station(station)
     @arrived = true
   end
 
