@@ -2,7 +2,7 @@ require 'passenger'
 
 describe Passenger do
 
-  let(:passenger) {Passenger.new}
+  let(:passenger) {Passenger.new(0)}
   let(:station) {double :station, :has_passengers? => true}
 
   it 'when initialized, they haave zero funds' do

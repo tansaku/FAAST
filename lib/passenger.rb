@@ -1,7 +1,7 @@
 class Passenger
 
-  def initialize
-    @funds = 0
+  def initialize(amount)
+    @funds = amount
   end
 
   def funds
