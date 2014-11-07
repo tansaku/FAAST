@@ -9,7 +9,7 @@ describe Train do
   end
 
   it 'can arrive at a station' do
-    expect(train.arrived?).to be true
+    expect(train.at_station?).to be true
   end
 
 

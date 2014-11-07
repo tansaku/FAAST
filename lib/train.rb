@@ -9,7 +9,7 @@ class Train
     @carriages = true
   end
 
-  def arrived?
+  def at_station?
     @arrived = true
   end
 end
