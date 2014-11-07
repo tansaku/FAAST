@@ -12,21 +12,9 @@ describe Station do
   expect(station.touched_in_passengers).to eq 1
   end
 
-  # it 'can hold trains' do
-  #   expect(station.has_trains?).to be false
-  #   station.add_train(train)
-  #   expect(station.has_trains?).to be true
-  # end
-
   it 'can only hold 1 train at a time' do
-    expect(station.has_trains).to eq 0
     station.add_train(train)
-    expect(station.has_trains).to eq 1
+    expect{station.add_train(train)}.to raise_error
   end
-
-    
-    
-
-
 
 end

@@ -15,14 +15,13 @@ class Station
   end
 
   def add_train(train)
+    raise "Cannot enter station, until train departs" if @train_in_station.count == 1
     @train_in_station << train
   end
 
   def has_trains
     @train_in_station.count
   end
-
-
 
 end
 
