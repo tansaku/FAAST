@@ -1,7 +1,5 @@
 class Carriage
 
-  attr_accessor :passengers
-
   def initialize
   @empty
   @passengers = []
@@ -23,12 +21,8 @@ class Carriage
     @passengers.pop
   end
 
-
   def full?
     @passengers.count == 40
   end
-
-
-
 
 end
