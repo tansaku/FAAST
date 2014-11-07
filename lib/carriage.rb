@@ -3,6 +3,7 @@ class Carriage
   def initialize
   @empty
   @passengers = []
+
   end
 
   def passengers
@@ -10,7 +11,7 @@ class Carriage
   end
 
   def empty?
-    @empty = true
+    @passengers.count == 0
   end
 
   def board(passenger)

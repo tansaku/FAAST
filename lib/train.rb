@@ -1,12 +1,17 @@
 class Train
 
   def initialize
-  @carriages = nil
+  @train = []
   @arrived = nil
   end
 
-  def has_carriages?
-    @carriages = true
+  def add_carriage(carriage)
+    @train << carriage
+  end
+
+
+  def has_carriages(carriage)
+    @train.count
   end
 
   def at_station?

@@ -3,9 +3,11 @@ require 'train'
 describe Train do
 
   let(:train) {Train.new}
+  let(:carriage) {double :carriage}
 
-  it 'has carriages' do
-    expect(train.has_carriages?).to be true
+  it 'has at least 2 carriages' do
+    2.times { train.add_carriage(carriage) }
+    expect(train.has_carriages(carriage)).to eq 2
   end
 
   it 'can arrive at a station' do
