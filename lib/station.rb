@@ -2,7 +2,6 @@ class Station
 
   def initialize
   @touched_in_passengers = []
-  @has_train = false
   @train_in_station = []
   end
 
@@ -14,14 +13,19 @@ class Station
     @touched_in_passengers.count
   end
 
-  def add_train(train)
+  def train_arrives(train)
     raise "Cannot enter station, until #{train} departs" if @train_in_station.count == 1
     @train_in_station << train
   end
 
-  # def has_trains
-  #   @train_in_station.count
-  # end
+  def train_departs(train)
+    @train_in_station.pop
+  end
+
+  def has_train
+    @train_in_station.count
+  end
+
 
 end
 

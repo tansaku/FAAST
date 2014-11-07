@@ -13,8 +13,16 @@ describe Station do
   end
 
   it 'can only hold 1 train at a time' do
-    station.add_train(train)
+    station.train_arrives(train)
     expect{station.add_train(train)}.to raise_error
   end
+
+  it 'allows trains to depart' do
+    station.train_arrives(train)
+    expect(station.has_train).to be 1
+    station.train_departs(train)
+    expect(station.has_train).to be 0
+  end
+
 
 end

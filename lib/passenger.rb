@@ -1,6 +1,19 @@
 class Passenger
 
+  def initialize
+    @funds = 0
+  end
+
+  def funds
+    @funds
+  end
+
+  def top_up!(amount)
+    @funds += amount
+  end
+
   def touch_in
+    raise "Insufficient Funds" if @funds < 2
     @touch_in = true
   end
 
@@ -11,5 +24,10 @@ class Passenger
   def touched_in?
     @touch_in
   end
+
+  # def account(funds)
+
+  # end
+
 
 end

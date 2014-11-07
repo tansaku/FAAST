@@ -11,11 +11,26 @@ describe Train do
     expect(train.has_carriages).to eq 2
   end
 
-  it 'can arrive at a station' do
-    expect(train.at_station?).to be false
-    train.arrives_at_station(station)
-    expect(train.at_station?).to be true
+  it 'knows when it is at a station' do
+    train.arrives_at(station)
+    expect(train.at_station?).to eq 1
   end
+
+  it 'can arrive at a station' do
+    expect(train.at_station?).to eq 0
+    train.arrives_at(station)
+    expect(train.at_station?).to eq 1
+  end
+
+  it 'can depart from a station' do
+    train.arrives_at(station)
+    expect(train.at_station?).to eq 1
+    train.departs_from(station)
+    expect(train.at_station?).to eq 0
+  end
+
+
+
 
 
 end
