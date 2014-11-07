@@ -16,5 +16,4 @@ describe Passenger do
     expect(passenger.touched_in?).to be false
   end
 
-
 end

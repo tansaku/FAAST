@@ -3,6 +3,7 @@ class Station
   def initialize
   @touched_in_passengers = []
   @has_train = false
+  @train_in_station = []
   end
 
   def hold_passengers(passenger)
@@ -13,14 +14,14 @@ class Station
     @touched_in_passengers.count
   end
 
-  def has_train!
-    @has_train = true
+  def add_train(train)
+    @train_in_station << train
   end
 
-  def has_trains?
-    @has_train
+  def has_trains
+    @train_in_station.count
   end
-  
+
 
 
 end
