@@ -1,5 +1,7 @@
 class Train
 
+  attr_accessor :arrived
+
   def initialize
   @train = []
   @arrived = nil
@@ -16,13 +18,15 @@ class Train
 
   def arrives_at(station)
     @train_in_station << station
+    @arrived = true
   end
 
   def departs_from(station)
-    @train_in_station.pop
+    @train_in_station.reject! {|e| e == station}
+    @arrived = false
   end
 
-  def at_station?
+  def at_station
     @train_in_station.count
   end
 

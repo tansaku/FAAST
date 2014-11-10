@@ -1,5 +1,9 @@
 class Carriage
 
+  attr_accessor :train
+  # # attr_accessor :at_station
+  attr_accessor :arrived
+
   def initialize
   @empty
   @passengers = []
@@ -14,12 +18,14 @@ class Carriage
     @passengers.count == 0
   end
 
-  def board(passenger)
+  def board(passenger, train)
+    raise "Train not in Station!!!" if train.at_station == 0
     @passengers << passenger
   end
 
-  def alight(passenger)
-    @passengers.pop
+  def alight(passenger, train)
+    raise "Train not in Station!!!" if train.at_station == 0
+    @passengers.reject! {|e| e == passenger}
   end
 
   def full?

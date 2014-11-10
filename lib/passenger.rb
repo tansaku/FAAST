@@ -2,6 +2,7 @@ class Passenger
 
   def initialize
     @funds = 0
+    @touch_in = false
   end
 
   def funds
@@ -25,9 +26,5 @@ class Passenger
     @touch_in
   end
 
-  # def account(funds)
-
-  # end
-
-
 end
+

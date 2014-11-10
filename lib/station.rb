@@ -26,6 +26,5 @@ class Station
     @train_in_station.count
   end
 
-
 end
 
