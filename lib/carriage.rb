@@ -1,8 +1,8 @@
 class Carriage
 
   def initialize
-  @empty
   @passengers = []
+  empty?
 
   end
 
