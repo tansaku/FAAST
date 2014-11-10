@@ -15,6 +15,7 @@ class Carriage
   end
 
   def board(passenger)
+    raise "This Carriage is Full" if @passengers.count == 40
     @passengers << passenger
   end
 

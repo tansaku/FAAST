@@ -43,3 +43,19 @@ Responsibilites         | Collaborators
 Hold Trains             |Trains
 Hold Passsengers        |Passengers
 
+### Development
+
+During the development of these classes, I revisied and 
+refactored, and in some cases totally re-wrote some of the 
+classes, to make them as concise as possible, while
+ maintaining the same functionality and adhearing to SOLID 
+ principles. 
+
+
+ ### Further Work
+
+ I had toyed with the idea of writing an "Account" class
+ which would be responsible for storing imformation
+ regarding each passengers funds. However I decided
+ not to develop this, since this has little to do with
+ the actual mechanics of a working train system

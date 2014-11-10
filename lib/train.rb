@@ -2,7 +2,7 @@ class Train
 
   def initialize
   @train = []
-  @arrived = nil
+  # @arrived = nil
   @train_in_station = []
   end
 

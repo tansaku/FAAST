@@ -29,8 +29,4 @@ describe Train do
     expect(train.at_station?).to eq 0
   end
 
-
-
-
-
 end

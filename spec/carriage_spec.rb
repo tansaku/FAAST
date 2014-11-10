@@ -13,7 +13,7 @@ describe Carriage do
   it 'is full when it has 40 passengers'do
     expect(carriage).to be_empty
     40.times { carriage.board(passenger) }
-    expect(carriage).to be_full
+    expect{carriage.board(passenger)}.to raise_error "This Carriage is Full"
   end
 
   it 'when train is at station, carriage allows passenger to board' do
@@ -22,7 +22,7 @@ describe Carriage do
     expect(carriage.passengers).to eq(1)
   end
 
-  it 'when train is at station,  carriage allows passenger to alight'do
+  it 'when train is at station, carriage allows passenger to alight'do
   train.at_station?
   carriage.board(passenger)
   carriage.alight(passenger)
