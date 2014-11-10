@@ -1,7 +1,13 @@
 class Passenger
 
+<<<<<<< HEAD
   def initialize(amount)
     @funds = amount
+=======
+  def initialize
+    @funds = 0
+    @touch_in = false
+>>>>>>> development
   end
 
   def funds
@@ -25,9 +31,5 @@ class Passenger
     @touch_in
   end
 
-  # def account(funds)
-
-  # end
-
-
 end
+
