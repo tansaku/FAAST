@@ -10,7 +10,7 @@ describe Train do
 
     it 'has at least 2 carriages' do
       2.times { train.add_carriage(carriage) }
-      expect(train.has_carriages).to eq 2
+      expect(train.carriage_count).to eq 2
     end
 
     it 'knows when it is at a station' do

@@ -14,28 +14,23 @@ describe Carriage do
     end
 
 
-    it 'is full when it has 40 passengers' do
-      40.times {carriage.board(passenger, train)}
-      expect(carriage).to be_full
-    end
-
-    it 'when train is at station, carriage allows passenger to board' do
+    it 'when train is at station, can receive a passenger' do
       expect(train.at_station).to be true
-      carriage.board(passenger, train)
-      expect(carriage.passengers).to eq(1)
+      carriage.receive(passenger, train)
+      expect(carriage.passengers_count).to eq(1)
     end
 
     it 'when train is at station,  carriage allows passenger to alight' do
       expect(train.at_station).to be true
-      carriage.board(passenger, train)
+      carriage.receive(passenger, train)
       carriage.alight(passenger, train)
-      expect(carriage.passengers).to eq(0)
+      expect(carriage.passengers_count).to eq(0)
     end
 
     it 'Raise error when passenger boards when train not in station' do
       allow(train).to receive(:at_station).and_return 0
       expect(train_in_transit.at_station).to eq 0
-      expect{carriage.board(passenger, train)}.to raise_error "Train not in Station!!!"
+      expect{carriage.receive(passenger, train)}.to raise_error "Train not in Station!!!"
     end
 
     it 'Raise error when passenger alights when train not in station' do
@@ -44,6 +39,10 @@ describe Carriage do
       expect{carriage.alight(passenger, train)}.to raise_error "Train not in Station!!!"
     end
 
+    it 'is full when it has 40 passengers' do
+      40.times {carriage.receive(passenger, train)}
+      expect(carriage).to be_full
+    end
 
   end
 

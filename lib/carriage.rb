@@ -1,16 +1,13 @@
 class Carriage
 
-  attr_accessor :train
-  # # attr_accessor :at_station
-  attr_accessor :arrived
+  MAX_CARRIAGE_CAPACITY = 40
 
   def initialize
-  @empty
-  @passengers = []
-
+    @empty
+    @passengers = []
   end
 
-  def passengers
+  def passengers_count
     @passengers.count
   end
 
@@ -18,7 +15,7 @@ class Carriage
     @passengers.count == 0
   end
 
-  def board(passenger, train)
+  def receive(passenger, train)
     raise "Train not in Station!!!" if train.at_station == 0
     @passengers << passenger
   end
@@ -29,7 +26,7 @@ class Carriage
   end
 
   def full?
-    @passengers.count == 40
+    @passengers.count == MAX_CARRIAGE_CAPACITY
   end
 
 end
